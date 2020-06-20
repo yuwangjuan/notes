@@ -60,6 +60,8 @@ vue3移除create ，使用setup(){//3.setup(){}
     }
 }
 <!-- 相关全家桶 -->
+安装 vue3 cnpm install vue@next
+查看vue3 的源码：node_modules/vue@3.0.0-beat.14../dist/vue.esm-browser.js
 vue-router 在vue3中安装vue-router   npm i vue-router next
 vuex
 
