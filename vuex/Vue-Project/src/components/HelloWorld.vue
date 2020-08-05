@@ -28,7 +28,6 @@ export default {
   methods: {
     postInfo() {
       let that = this;
-      // console.log(info,'info')
       that.$store.commit("getInfo", info); 
       that.$router.push({
         path:'/detail'
