@@ -1,0 +1,6 @@
+≥ı ºªØvue
+1.cnpm i  -g @vue/cli
+2. vue init webpack Vue-Project
+3. cd vue-project
+4.cnpm i
+5.npm run dev
