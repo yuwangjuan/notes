@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 策略模式、状态模式（策略模式是加了状态的状态模式）;优化if else写法
+function strategy(type,a,b) {
+    if(type=='add'){
+        return a+b;
+    }else if(type=="minus"){
+        return a-b;
+    }
+}
+function mover() {
+    console.log(arguments,'arguments')
+    if(arguments.length==1){
+        if(arguments[0] =='left'){
+
+        }
+    }
+}
+mover('left');
+function mover() {
+    this.status = [];
+    this.actionHandle = {
+        left:function() {
+
+        },
+        top:function (){
+
+        },
+        bottom:function () {
+
+        }
+    }
+}
+mover.prototype.run = function () {
+    this.status = Array.prototype.slice.call(arguments)//类数组变成真正的数组
+    this.status.forEach((action) => {
+        this.actionHandle[action]();
+    })
+}
+run('left');
+var strategies = {
+    "S": function(salary){
+        return salary * 4;
+    },
+    "A": function(salary) {
+        return salary * 3;
+    },
+    "B": function(salary){
+        return salary * 2;
+    }
+}
+var calculateBouns = function(level,salary) {
+    return strategies[level](salary);
+};
+console.log(calculateBouns('S',20000));
+</script>
+</html>

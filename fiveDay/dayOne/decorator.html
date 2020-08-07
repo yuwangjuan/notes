@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 装饰者模式：当一个方法需要扩展，但是又不好去修改方法
+    // 1.别人写的代码
+    // 新建一个新方法，调用老的方法加上需要加的代码，包装成新的方法，
+    var a = {
+        b:function() {
+
+        }
+    };
+    function myb() {
+        a.b();
+        // 要扩展的方法
+    }
+
+    function decorator(dom,fn) {
+        if(typeof dom.onclick=='function') {
+            var _oldfn = dom.onclick;
+            dom.onclick = function(){
+                _oldfn();
+                console.log(111);
+            }
+        }
+    }
+    decorator(dom1,function(){
+        console.log(1)
+    })
+    decorator(dom2,function() {
+        console.log(4)
+    })
+
+    // vue数组响应式处理也使用了装饰者
+    // 1.defineProperty=>对象的属性进行处理
+    // 2.让数组也触发双向绑定
+</script>
+</html>

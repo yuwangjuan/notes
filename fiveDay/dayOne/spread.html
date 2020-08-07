@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>    
+ // 可扩展性
+// 1.模块分明
+    function calc(a) {
+        ahandlerAdd();
+        ahandlerCheng();
+        ahandlerDevice();
+        ahandlerMinus();
+        return a;
+    }
+    function ahandlerAdd() {
+        a += 3;
+    }
+    function ahandlerMinus() {
+       a -= 4; 
+    }
+    function ahandlerCheng() {
+        a *= 3;
+    }
+    function ahandlerDevice() {
+        a /= 5;
+    }
+// 2.耦合度 两个模块相互作用的程度
+        // 降低耦合度常用手段：
+        //a. 加层数 :加参数
+        //b.观察者
+        //c.把消息传递api 化
+         var data = [];
+         function a(data) {
+             data.forEach(() => {
+
+             })
+         }
+//  3.添加代替更改
+    function a(number) {
+        //一系列复杂操作
+        this.number = number;
+    }
+    a.prototype.getNumber = function() {
+        return this.number;
+    }
+    var a = new a(10);
+    function b() {
+        a.getNumber();
+    }
+</script>
+</html>

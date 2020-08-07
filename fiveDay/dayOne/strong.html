@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 健壮性：
+        // 1.参数
+    // 普通参数
+    function add(a,b){
+        if(typeof a === 'number' && typeof b === 'number') {
+            return a+b;
+         } else {
+             throw new Error('a or b is not a number');
+         }
+    }
+    // 对象参数
+    function vue(config) {
+    var _default = {
+        a:1,
+        b:2
+    }
+    for(var item in config){
+        _default[item] = config[item] || _default[item];
+        console.log(item,_default[item]);
+    }
+}
+new vue({
+    a:3,
+    b:2
+})
+// 类的校验 类作为参数
+function myVue(vueob) {
+    if(vueob instanceof Vue){
+        
+    }else{
+        throw new Error('vueob is not a instanceof vue')
+    }
+}
+// 2.易错用try{
+// } catch(e){
+// }
+// 3.变量权限控制  这个变量只可以被读
+//vue-router
+Object.defineProperty(this,'$router', {
+    writable:false,
+    get:function () {
+        return _router;
+    }
+    //不写set
+})
+
+
+
+</script>
+</html>
